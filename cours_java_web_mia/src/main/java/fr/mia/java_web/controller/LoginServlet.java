@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class LoginServlet extends HttpServlet {
-    private static final String TEST_SERVLET = "LA SERVLET EST OK";
+    //private static  String login = "LA SERVLET LOGIN EST OK";
+    //private static  String password = "LA SERVLET LOGIN EST OK";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -17,9 +18,10 @@ public class LoginServlet extends HttpServlet {
 
         // Actual logic goes here
         PrintWriter out = resp.getWriter();
-        out.println("Login done");
+        out.println("Login done  " +  req.getParameter("login") + " PASSWORD  " + req.getParameter("password"));
 
         // Récupérer les parametres du formulaire en demandant a la requete
-
+             req.getParameter("login");
+             req.getParameter("password");
     }
 }
