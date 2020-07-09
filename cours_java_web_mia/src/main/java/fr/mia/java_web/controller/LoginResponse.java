@@ -11,15 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginResponse extends HttpServlet {
-    protected static String jspPageUrl ="";
-    protected final static String LOGIN_PAGE_URL ="./login_page.jsp";
-    protected final static String DASHBOARD_PAGE_URL ="./dashboard.jsp";
-    public static JournalistBean journalist;
-    protected Boolean IsJournalistReconized ;
+    protected final static String LOGIN_PAGE_URL ="/WEB-INF/jsp/login_page.jsp";
+    protected final static String DASHBOARD_PAGE_URL ="/WEB-INF/jsp/dashboard.jsp";
+    protected final static String USER_LOGIN_PARAMETER_NAME ="login";
+    protected final static String USER_PASS_PARAMETER_NAME ="password";
 
     protected JournalistBean initializeJournalist(){
-        journalist = new JournalistBean("Palo","Pasix",5 );
-        return journalist;
+       return new JournalistBean("Palo","Pasix",5 );
     }
 
     protected boolean checkUser(JournalistBean j, String login, String password){
@@ -34,17 +32,19 @@ public class LoginResponse extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Set response type
-        resp.setContentType("text/html");
-        initializeJournalist();
+
+        JournalistBean journalist = initializeJournalist();
+        boolean isJournalistReconized ;
+
+        String jspPageUrl ="";
 
         //  =>   Récupérer les parametres du formulaire en demandant a la requete
-            String typedLogin = req.getParameter("login");
-            String typedPassword =req.getParameter("password");
+            final String typedLogin = req.getParameter(USER_LOGIN_PARAMETER_NAME);
+            final String typedPassword = req.getParameter(USER_PASS_PARAMETER_NAME);
 
         //  =>   Verification si journaliste reconnu
-            IsJournalistReconized = checkUser(journalist,typedLogin,typedPassword);
-            if(IsJournalistReconized==true)
+            isJournalistReconized = checkUser(journalist,typedLogin,typedPassword);
+            if(isJournalistReconized)
             {
                 //   =>  Si Connexion réussie Dispatcher les paramètres vers la jsp de dashboard
                 jspPageUrl = DASHBOARD_PAGE_URL;
@@ -59,6 +59,5 @@ public class LoginResponse extends HttpServlet {
             final ServletContext servletContext = req.getServletContext();
             final RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(jspPageUrl);
             requestDispatcher.forward(req, resp);
-
     }
 }

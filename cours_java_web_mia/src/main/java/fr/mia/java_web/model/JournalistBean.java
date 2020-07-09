@@ -29,6 +29,9 @@ public class JournalistBean {
     }
 
     public JournalistBean(String login, String password, int credit) {
+        this.login = login;
+        this.password = password;
+        this.credit = credit;
     }
 
     /**

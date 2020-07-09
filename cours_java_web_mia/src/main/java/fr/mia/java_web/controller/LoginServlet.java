@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 
         // EXO 2 => Dispatcher les paramètres vers un autre jsp
         final ServletContext servletContext = req.getServletContext();
-        final RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher("/login_response_page.jsp");
+        final RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher("/loginResponse");
         requestDispatcher.forward(req, resp);
     }
 
