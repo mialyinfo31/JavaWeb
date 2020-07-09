@@ -1,12 +1,13 @@
-<html>
-    <body>
-          <head>
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8"/>
                 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
                 <link href="./style.css" rel="stylesheet">
                 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-           </head>
-
+     </head>
+    <body>
             <div class="wrapper fadeInDown">
               <div id="formContent">
 
@@ -24,6 +25,5 @@
 
               </div>
             </div>
-
    </body>
 </html>

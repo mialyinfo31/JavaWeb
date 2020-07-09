@@ -28,7 +28,7 @@ public class JournalistBean {
         this.credit = credit;
     }
 
-    public JournalistBean(int idJournaliset, String journalisteName, int journalisteCredit) {
+    public JournalistBean(String login, String password, int credit) {
     }
 
     /**

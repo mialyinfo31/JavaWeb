@@ -20,6 +20,11 @@
     <servlet-class>fr.mia.java_web.controller.LoginResponse</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>dashboard-servlet</servlet-name>
+    <servlet-class>fr.mia.java_web.controller.DashboardServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>my-simple-servlet</servlet-name>
     <url-pattern>/simple</url-pattern>
@@ -31,10 +36,14 @@
   </servlet-mapping>
 
   <servlet-mapping>
-  <servlet-name>login-response</servlet-name>
-  <url-pattern>/loginResponse</url-pattern>
-</servlet-mapping>
+    <servlet-name>login-response</servlet-name>
+    <url-pattern>/loginResponse</url-pattern>
+  </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>dashboard-servlet</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
 
 
 </web-app>
