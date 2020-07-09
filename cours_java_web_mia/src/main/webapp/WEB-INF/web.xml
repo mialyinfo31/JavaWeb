@@ -4,6 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
   <servlet>
     <servlet-name>my-simple-servlet</servlet-name>
     <servlet-class>fr.mia.java_web.controller.MySimpleServlet</servlet-class>
@@ -12,6 +13,11 @@
   <servlet>
     <servlet-name>login-servlet</servlet-name>
     <servlet-class>fr.mia.java_web.controller.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>login-response</servlet-name>
+    <servlet-class>fr.mia.java_web.controller.LoginResponse</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -23,5 +29,12 @@
     <servlet-name>login-servlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+  <servlet-name>login-response</servlet-name>
+  <url-pattern>/loginResponse</url-pattern>
+</servlet-mapping>
+
+
 
 </web-app>
